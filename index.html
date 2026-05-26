@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Election Process Guide</title>
+
+  <!-- Tabler Icons (outline) -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css"
+  />
+
+  <!-- App styles -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Screen-reader summary -->
+  <h1 class="sr-only">
+    Interactive guide to the election process, timelines, and steps
+  </h1>
+
+  <div id="app">
+
+    <!-- ── Page header ── -->
+    <div class="header">
+      <h1>Election process guide</h1>
+      <p>Explore how elections work — step by step</p>
+    </div>
+
+    <!-- ── Topic navigation ── -->
+    <nav class="topic-grid" aria-label="Topics">
+
+      <button class="topic-btn" onclick="showTopic('overview')" aria-label="Overview">
+        <i class="ti ti-home" aria-hidden="true"></i>
+        <span class="topic-label">Overview</span>
+      </button>
+
+      <button class="topic-btn" onclick="showTopic('steps')" aria-label="Election steps">
+        <i class="ti ti-list-numbers" aria-hidden="true"></i>
+        <span class="topic-label">Election steps</span>
+      </button>
+
+      <button class="topic-btn" onclick="showTopic('timeline')" aria-label="Timeline">
+        <i class="ti ti-calendar-event" aria-hidden="true"></i>
+        <span class="topic-label">Timeline</span>
+      </button>
+
+      <button class="topic-btn" onclick="showTopic('voter')" aria-label="Voter guide">
+        <i class="ti ti-user-check" aria-hidden="true"></i>
+        <span class="topic-label">Voter guide</span>
+      </button>
+
+      <button class="topic-btn" onclick="showTopic('faq')" aria-label="FAQs">
+        <i class="ti ti-help-circle" aria-hidden="true"></i>
+        <span class="topic-label">FAQs</span>
+      </button>
+
+      <button class="topic-btn" onclick="showTopic('glossary')" aria-label="Glossary">
+        <i class="ti ti-book" aria-hidden="true"></i>
+        <span class="topic-label">Glossary</span>
+      </button>
+
+    </nav>
+
+    <!-- ── Dynamic content area ── -->
+    <div class="content-area" id="contentArea">
+      <div class="content-body">
+
+        <!-- Default home screen -->
+        <div class="home-view">
+          <i class="ti ti-building-bank home-icon" aria-hidden="true"></i>
+          <p>
+            Welcome! Choose a topic above to explore how elections work — from
+            registering to vote, to counting results. Tap any section to expand
+            details.
+          </p>
+        </div>
+
+        <!-- Quick-start ask buttons -->
+        <div class="ask-btn-row" style="justify-content: center; margin-top: 1.5rem;">
+          <button class="ask-btn"
+            onclick="sendPrompt('Explain the full election process from start to finish')">
+            <i class="ti ti-arrow-up-right" aria-hidden="true"></i>
+            Full election walkthrough ↗
+          </button>
+          <button class="ask-btn"
+            onclick="sendPrompt('How do I register to vote?')">
+            <i class="ti ti-arrow-up-right" aria-hidden="true"></i>
+            How to register ↗
+          </button>
+          <button class="ask-btn"
+            onclick="sendPrompt('What happens after election day?')">
+            <i class="ti ti-arrow-up-right" aria-hidden="true"></i>
+            After election day ↗
+          </button>
+        </div>
+
+      </div>
+    </div><!-- /#contentArea -->
+
+  </div><!-- /#app -->
+
+  <!-- App logic -->
+  <script src="main.js"></script>
+
+</body>
+</html>
